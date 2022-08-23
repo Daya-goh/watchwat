@@ -13,14 +13,16 @@ const Fetch = () => {
       }
     });
   /* -------------------------------------------------- */
+  const [image, setImage] = useState({});
   const titleUrl =
     "https://api.watchmode.com/v1/title/3186566/details/?apiKey=Xi2NW1MlhJARxSqBIbyUJD68ZjljDinK2iKSzG6F&title_id=3186566";
 
-  const titleImg = fetch(titleUrl)
+  fetch(titleUrl)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      setImage(data.poster);
     });
+
   /* ------------------------------------------------------ */
   const [show, setShow] = useState({});
 
@@ -36,7 +38,7 @@ const Fetch = () => {
     <div>
       <h1>test</h1>
       <h1>{show.title}</h1>
-      <img src={titleImg} alt="extraordinary woo" />
+      <img src={image} alt="extraordinary woo" />
       <button onClick={handleClick}> click</button>
     </div>
   );
