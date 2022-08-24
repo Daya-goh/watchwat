@@ -13,7 +13,7 @@ const Fetch = () => {
         .then((response) => response.json())
         .then((data) => {
           const showCodes = data?.titles?.map((id) => id.imdb_id);
-          const show2 = showCodes.slice(0, 2);
+          const show2 = showCodes.slice(0, 4);
           return show2;
         });
       console.log(codeArray);
