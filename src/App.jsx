@@ -2,8 +2,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./Pages/HomePage";
 import Layout from "./Pages/Layout";
 import Fetch from "./Test/Fetch";
+import { useEffect } from "react";
+import { themeChange } from "theme-change";
 
 function App() {
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
