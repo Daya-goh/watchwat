@@ -1,4 +1,4 @@
-const data = [
+const dataKorean = [
   {
     id: 3172045,
     title: "Vincenzo",
@@ -371,4 +371,4 @@ const data = [
   },
 ];
 
-export default data;
+export default dataKorean;
