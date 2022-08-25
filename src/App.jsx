@@ -4,6 +4,7 @@ import Layout from "./Pages/Layout";
 import Fetch from "./Test/Fetch";
 import { useEffect } from "react";
 import { themeChange } from "theme-change";
+import DetailsPage from "./Pages/DetailsPage";
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
+          <Route path="/detailspage/:id" element={<DetailsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

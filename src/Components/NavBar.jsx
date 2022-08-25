@@ -1,8 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 const NavBar = () => {
+  const navigateHome = useNavigate();
+  const handleHome = () => {
+    navigateHome("/");
+  };
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">WatchWat</a>
+        <a className="btn btn-ghost normal-case text-xl" onClick={handleHome}>
+          WatchWat
+        </a>
         <div className="w-10 rounded-full">
           <img src="https://img.icons8.com/bubbles/500/tv-show.png" />
         </div>

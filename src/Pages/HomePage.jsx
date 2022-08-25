@@ -11,7 +11,7 @@ const Homepage = () => {
           placeholder="Search Shows"
           className="input input-bordered input-primary w-full max-w-xs h-8 "
         />
-        <button className="btn btn-sm text-xs h-4 bg-blue-300 border-blue-800">
+        <button className="btn btn-sm text-xs text-black h-4 bg-blue-300 border-blue-800">
           Submit
         </button>
       </div>
