@@ -17,7 +17,6 @@ const DetailsPage = ({
       const response = await fetch(fetchDetailsUrl);
 
       const data = await response.json();
-      console.log(data);
       setShowDetails(data);
     };
     fetchDetails();
@@ -26,12 +25,14 @@ const DetailsPage = ({
   return (
     <div className="flex flex-row">
       <div>
+        {/* image */}
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
             <a href={showDetails.trailer} target="_blank">
               <img src={showDetails.backdrop} />
             </a>
           </figure>
+          {/* text body */}
           <div className="card-body items-center text-center">
             <h2 className="card-title text-2xl">{showDetails.title}</h2>
             <p>Rating: {showDetails.user_rating}</p>
@@ -40,6 +41,7 @@ const DetailsPage = ({
               Release date:{" "}
               {Moment(showDetails.release_date).format("DD-MM-YYYY")}
             </p>
+            {/* buttons */}
             <div className="card-actions">
               <button className="btn btn-primary">+</button>
               {/* <button className="btn btn-primary">♥️</button> */}

@@ -1,22 +1,36 @@
-const LikeButton = ({ showDetails, favArray, setFavArray }) => {
-  const handleLike = () => {
-    console.log("like!");
-    storeFavShow(showDetails);
+import { useParams } from "react-router-dom";
 
-    console.log(favArray);
+const LikeButton = ({ showDetails, favArray, setFavArray }) => {
+  const { showId } = useParams();
+  const id = showId ? showId : showDetails.imdb_id;
+
+  const handleLike = (id) => {
+    console.log("like!");
+    storeFavShow(id);
+    console.log(id.id);
   };
 
-  const storeFavShow = (showDetails) => {
-    if (!favArray.find((showId) => showId.id === showDetails.id)) {
+  const storeFavShow = (id) => {
+    if (!favArray.find((showId) => id.id === showId.imdb_id)) {
       setFavArray([...favArray, showDetails]);
     } else {
-      setFavArray(favArray.filter((showId) => showId.id !== showDetails.id));
+      setFavArray(favArray.filter((showId) => id.id !== showId.imdb_id));
     }
   };
 
+  const status = favArray?.find((showId) => showId.id === showDetails?.id)
+    ? "pink"
+    : " ";
+  console.log(`this ${status}`);
+  console.log(favArray);
+
   return (
     <div>
-      <button className="btn btn-primary" onClick={handleLike}>
+      <button
+        className="btn btn-primary"
+        style={{ backgroundColor: status, border: status }}
+        onClick={() => handleLike({ id })}
+      >
         ♥️
       </button>
     </div>

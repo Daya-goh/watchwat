@@ -34,7 +34,13 @@ function App() {
           />
           <Route
             path="/favorites"
-            element={<Favorites favArray={favArray} />}
+            element={
+              <Favorites
+                favArray={favArray}
+                showDetails={showDetails}
+                setFavArray={setFavArray}
+              />
+            }
           />
         </Route>
       </Routes>
