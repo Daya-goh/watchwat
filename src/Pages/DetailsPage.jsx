@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Moment from "moment";
+import LikeButton from "../Components/LikeButton";
 
-const DetailsPage = () => {
+const DetailsPage = ({
+  favArray,
+  setFavArray,
+  showDetails,
+  setShowDetails,
+}) => {
   const { id } = useParams();
-  const [showDetails, setShowDetails] = useState({});
 
+  const fetchDetailsUrl = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=kNWi3tZZezuOie6laejFBpvlyeFcEcTtlxr9WRND`;
   useEffect(() => {
     const fetchDetails = async () => {
-      const response = await fetch(
-        `https://api.watchmode.com/v1/title/${id}/details/?apiKey=kNWi3tZZezuOie6laejFBpvlyeFcEcTtlxr9WRND`
-      );
+      const response = await fetch(fetchDetailsUrl);
 
       const data = await response.json();
       console.log(data);
@@ -18,13 +22,13 @@ const DetailsPage = () => {
     };
     fetchDetails();
   }, []);
-
+  /* ------------------------------------------------------ */
   return (
     <div className="flex flex-row">
       <div>
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
-            <a href={showDetails.trailer}>
+            <a href={showDetails.trailer} target="_blank">
               <img src={showDetails.backdrop} />
             </a>
           </figure>
@@ -38,7 +42,12 @@ const DetailsPage = () => {
             </p>
             <div className="card-actions">
               <button className="btn btn-primary">+</button>
-              <button className="btn btn-primary">♥️</button>
+              {/* <button className="btn btn-primary">♥️</button> */}
+              <LikeButton
+                showDetails={showDetails}
+                favArray={favArray}
+                setFavArray={setFavArray}
+              />
             </div>
           </div>
         </div>
