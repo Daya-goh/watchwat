@@ -11,7 +11,7 @@ const DetailsPage = ({
 }) => {
   const { id } = useParams();
 
-  const fetchDetailsUrl = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=kNWi3tZZezuOie6laejFBpvlyeFcEcTtlxr9WRND`;
+  const fetchDetailsUrl = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=nmHHQa7DASZOcKZoR9Ok3bcbzXbS6ocMNhw1H1FF`;
   useEffect(() => {
     const fetchDetails = async () => {
       const response = await fetch(fetchDetailsUrl);

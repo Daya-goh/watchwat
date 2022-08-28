@@ -49,7 +49,13 @@ function App() {
           />
           <Route
             path="/searchresults"
-            element={<SearchPage searchResults={searchResults} />}
+            element={
+              <SearchPage
+                searchResults={searchResults}
+                favArray={favArray}
+                setFavArray={setFavArray}
+              />
+            }
           />
         </Route>
       </Routes>

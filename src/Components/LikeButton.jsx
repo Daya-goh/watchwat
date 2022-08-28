@@ -9,18 +9,24 @@ const LikeButton = ({ showDetails, favArray, setFavArray }) => {
   };
 
   const storeFavShow = (id) => {
-    if (!favArray.find((showId) => id.id === showId.imdb_id)) {
+    if (
+      !favArray.find(
+        (showId) => id.id === showId.imdb_id || id.id === showId.tmdb_id
+      )
+    ) {
       setFavArray([...favArray, showDetails]);
     } else {
-      setFavArray(favArray.filter((showId) => id.id !== showId.imdb_id));
+      setFavArray(
+        favArray.filter(
+          (showId) => id.id !== showId.imdb_id || id.id !== showId.tmdb_id
+        )
+      );
     }
   };
 
   const status = favArray?.find((showId) => showId.id === showDetails?.id)
     ? "pink"
     : " ";
-
-  console.log(favArray);
 
   return (
     <div>

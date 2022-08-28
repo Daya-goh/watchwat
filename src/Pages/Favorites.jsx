@@ -1,6 +1,7 @@
 import LikeButton from "../Components/LikeButton";
 
 const Favorites = ({ favArray, setFavArray }) => {
+  console.log(favArray);
   return (
     <div>
       <h1 className="font-bold text-3xl underline">Watch-Favorites</h1>
@@ -11,7 +12,7 @@ const Favorites = ({ favArray, setFavArray }) => {
             className="card flex flex-col items-center gap-2 shadow-2xl w-50"
           >
             <img
-              src={show.poster}
+              src={show.poster || show.image_url}
               alt={`${show.title} poster`}
               className="object-fill w-40 h-60"
             />

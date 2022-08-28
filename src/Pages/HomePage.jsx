@@ -14,7 +14,7 @@ const Homepage = ({ setSearchResults }) => {
 
   const handleSubmit = () => {
     console.log(input);
-    const searchURL = `https://api.watchmode.com/v1/autocomplete-search/?apiKey=kNWi3tZZezuOie6laejFBpvlyeFcEcTtlxr9WRND&search_field=name&search_value=${input}&search_type=2`;
+    const searchURL = `https://api.watchmode.com/v1/autocomplete-search/?apiKey=nmHHQa7DASZOcKZoR9Ok3bcbzXbS6ocMNhw1H1FF&search_field=name&search_value=${input}&search_type=2`;
     fetch(searchURL)
       .then((response) => response.json())
       .then((data) => {
