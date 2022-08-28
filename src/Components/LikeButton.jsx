@@ -5,9 +5,7 @@ const LikeButton = ({ showDetails, favArray, setFavArray }) => {
   const id = showId ? showId : showDetails.imdb_id;
 
   const handleLike = (id) => {
-    console.log("like!");
     storeFavShow(id);
-    console.log(id.id);
   };
 
   const storeFavShow = (id) => {
@@ -21,7 +19,7 @@ const LikeButton = ({ showDetails, favArray, setFavArray }) => {
   const status = favArray?.find((showId) => showId.id === showDetails?.id)
     ? "pink"
     : " ";
-  console.log(`this ${status}`);
+
   console.log(favArray);
 
   return (

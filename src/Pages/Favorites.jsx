@@ -1,15 +1,13 @@
-import { useParams } from "react-router-dom";
 import LikeButton from "../Components/LikeButton";
 
-const Favorites = ({ favArray, showDetails, setFavArray }) => {
+const Favorites = ({ favArray, setFavArray }) => {
   return (
     <div>
-      <h1>Favorites</h1>
+      <h1 className="font-bold text-3xl underline">Watch-Favorites</h1>
       <div className="flex flex-row flex-wrap gap-2">
         {favArray.map((show) => (
           <div
             key={show.id}
-            // id={id}
             className="card flex flex-col items-center gap-2 shadow-2xl w-50"
           >
             <img
