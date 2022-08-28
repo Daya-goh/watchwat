@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
 import DetailsPage from "./Pages/DetailsPage";
 import Favorites from "./Pages/Favorites";
+import SearchPage from "./Pages/SearchPage";
 
 function App() {
   useEffect(() => {
@@ -15,12 +16,16 @@ function App() {
 
   const [favArray, setFavArray] = useState([]);
   const [showDetails, setShowDetails] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
+          <Route
+            index
+            element={<Homepage setSearchResults={setSearchResults} />}
+          />
           <Route
             path="/detailspage/:id"
             element={
@@ -41,6 +46,10 @@ function App() {
                 setFavArray={setFavArray}
               />
             }
+          />
+          <Route
+            path="/searchresults"
+            element={<SearchPage searchResults={searchResults} />}
           />
         </Route>
       </Routes>

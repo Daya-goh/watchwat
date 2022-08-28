@@ -1,15 +1,26 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Carousel from "../Components/Carousel";
 import SiteTitle from "../Components/SiteTitle";
 
-const Homepage = () => {
+const Homepage = ({ setSearchResults }) => {
   const [input, setInput] = useState("");
+
+  const navigateSearch = useNavigate();
+
   const handleChange = (event) => {
     setInput(event.target.value);
   };
 
   const handleSubmit = () => {
     console.log(input);
+    const searchURL = `https://api.watchmode.com/v1/autocomplete-search/?apiKey=kNWi3tZZezuOie6laejFBpvlyeFcEcTtlxr9WRND&search_field=name&search_value=${input}&search_type=2`;
+    fetch(searchURL)
+      .then((response) => response.json())
+      .then((data) => {
+        setSearchResults(data.results);
+      });
+    navigateSearch("/searchresults");
   };
 
   return (
