@@ -17,11 +17,12 @@ function App() {
   const [favArray, setFavArray] = useState([]);
   const [showDetails, setShowDetails] = useState({});
   const [searchResults, setSearchResults] = useState([]);
+  const [addShow, setAddShow] = useState([]);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout addShow={addShow} />}>
           <Route
             index
             element={<Homepage setSearchResults={setSearchResults} />}
@@ -34,6 +35,8 @@ function App() {
                 favArray={favArray}
                 showDetails={showDetails}
                 setShowDetails={setShowDetails}
+                addShow={addShow}
+                setAddShow={setAddShow}
               />
             }
           />
@@ -54,6 +57,8 @@ function App() {
                 searchResults={searchResults}
                 favArray={favArray}
                 setFavArray={setFavArray}
+                addShow={addShow}
+                setAddShow={setAddShow}
               />
             }
           />

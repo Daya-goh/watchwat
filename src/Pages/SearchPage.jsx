@@ -1,6 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import AddButton from "../Components/AddButton";
 import LikeButton from "../Components/LikeButton";
-const SearchPage = ({ searchResults, favArray, setFavArray }) => {
+const SearchPage = ({
+  searchResults,
+  favArray,
+  setFavArray,
+  addShow,
+  setAddShow,
+}) => {
   const navigateImage = useNavigate();
 
   const handleDetails = (item) => {
@@ -28,7 +35,11 @@ const SearchPage = ({ searchResults, favArray, setFavArray }) => {
                 onClick={() => handleDetails(item)}
               />
               <div className="card-actions mb-2">
-                <button className="btn btn-primary">+</button>
+                <AddButton
+                  showDetails={item}
+                  addShow={addShow}
+                  setAddShow={setAddShow}
+                />
                 <LikeButton
                   showDetails={item}
                   favArray={favArray}

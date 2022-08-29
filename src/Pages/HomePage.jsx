@@ -27,6 +27,7 @@ const Homepage = ({ setSearchResults }) => {
   return (
     <>
       <SiteTitle />
+
       <div className="flex flex-col items-center gap-4">
         <div className="flex flex-row gap-2">
           <input

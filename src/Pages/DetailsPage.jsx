@@ -2,12 +2,15 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Moment from "moment";
 import LikeButton from "../Components/LikeButton";
+import AddButton from "../Components/AddButton";
 
 const DetailsPage = ({
   favArray,
   setFavArray,
   showDetails,
   setShowDetails,
+  addShow,
+  setAddShow,
 }) => {
   const { id } = useParams();
 
@@ -43,7 +46,12 @@ const DetailsPage = ({
             </p>
             {/* buttons */}
             <div className="card-actions">
-              <button className="btn btn-primary">+</button>
+              {/* <button className="btn btn-primary">+</button> */}
+              <AddButton
+                showDetails={showDetails}
+                addShow={addShow}
+                setAddShow={setAddShow}
+              />
               {/* <button className="btn btn-primary">♥️</button> */}
               <LikeButton
                 showDetails={showDetails}
