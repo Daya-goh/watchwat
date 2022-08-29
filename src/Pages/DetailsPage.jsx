@@ -14,13 +14,15 @@ const DetailsPage = ({
 }) => {
   const { id } = useParams();
 
-  const fetchDetailsUrl = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=nmHHQa7DASZOcKZoR9Ok3bcbzXbS6ocMNhw1H1FF`;
+  const fetchDetailsUrl = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=RHHugJR1qM9DGvMQ7id18NmO42spStnIziU6vwr2`;
+
   useEffect(() => {
     const fetchDetails = async () => {
       const response = await fetch(fetchDetailsUrl);
 
       const data = await response.json();
       setShowDetails(data);
+      console.log(data);
     };
     fetchDetails();
   }, []);
@@ -44,6 +46,7 @@ const DetailsPage = ({
               Release date:{" "}
               {Moment(showDetails.release_date).format("DD-MM-YYYY")}
             </p>
+            <p>{showDetails.plot_overview}</p>
             {/* buttons */}
             <div className="card-actions">
               {/* <button className="btn btn-primary">+</button> */}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AnimeCarousel from "../Components/AnimeCarousel";
 import Carousel from "../Components/Carousel";
 import SiteTitle from "../Components/SiteTitle";
 
@@ -11,7 +12,6 @@ const Homepage = ({ setSearchResults }) => {
   const handleChange = (event) => {
     setInput(event.target.value);
   };
-  //changing search input into a component?
 
   const handleSubmit = () => {
     console.log(input);
@@ -45,6 +45,7 @@ const Homepage = ({ setSearchResults }) => {
           </button>
         </div>
         <Carousel />
+        <AnimeCarousel />
       </div>
     </>
   );
