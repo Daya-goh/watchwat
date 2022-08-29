@@ -2,25 +2,17 @@ import { useParams } from "react-router-dom";
 
 const LikeButton = ({ showDetails, favArray, setFavArray }) => {
   const { showId } = useParams();
-  const id = showId ? showId : showDetails.imdb_id;
+  const id = showId ? showId : showDetails.id;
 
   const handleLike = (id) => {
     storeFavShow(id);
   };
 
   const storeFavShow = (id) => {
-    if (
-      !favArray.find(
-        (showId) => id.id === showId.imdb_id || id.id === showId.tmdb_id
-      )
-    ) {
+    if (!favArray.find((showId) => id.id === showId.id)) {
       setFavArray([...favArray, showDetails]);
     } else {
-      setFavArray(
-        favArray.filter(
-          (showId) => id.id !== showId.imdb_id || id.id !== showId.tmdb_id
-        )
-      );
+      setFavArray(favArray.filter((showId) => id.id !== showId.id));
     }
   };
 

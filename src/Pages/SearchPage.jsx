@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import LikeButton from "../Components/LikeButton";
 const SearchPage = ({ searchResults, favArray, setFavArray }) => {
-  console.log(searchResults);
+  const navigateImage = useNavigate();
+
+  const handleDetails = (item) => {
+    console.log("click");
+    console.log(item.id);
+    navigateImage(`/detailspage/${item.id}`);
+  };
+
   return (
     <div className="flex flex-col items-center gap-8">
       <div>
@@ -17,6 +25,7 @@ const SearchPage = ({ searchResults, favArray, setFavArray }) => {
                 src={item.image_url}
                 alt={`${item.name} poster`}
                 className="object-fill w-40 h-60"
+                onClick={() => handleDetails(item)}
               />
               <div className="card-actions mb-2">
                 <button className="btn btn-primary">+</button>

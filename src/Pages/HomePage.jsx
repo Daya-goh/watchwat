@@ -11,6 +11,7 @@ const Homepage = ({ setSearchResults }) => {
   const handleChange = (event) => {
     setInput(event.target.value);
   };
+  //changing search input into a component?
 
   const handleSubmit = () => {
     console.log(input);
