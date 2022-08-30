@@ -29,8 +29,8 @@ const Homepage = ({ setSearchResults }) => {
       <SiteTitle />
 
       <div className="flex flex-col items-center gap-4">
-        <div className="flex flex-row gap-2">
-          <form onSubmit={handleSubmit}>
+        <div className="flex flex-row gap-2 w-500">
+          <form onSubmit={handleSubmit} className="flex flex-row gap-2 w-500">
             <input
               type="text"
               placeholder="Search Shows"
