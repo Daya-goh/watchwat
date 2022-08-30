@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import animeData from "./AnimeData";
-const AnimeCarousel = () => {
+import comedyData from "../Data/ComedyData";
+const ComedyCarousel = () => {
   let x = 0;
 
   const navigateShowDetail = useNavigate();
@@ -15,15 +15,15 @@ const AnimeCarousel = () => {
         <h3>Anime</h3>
       </div>
       <div className="flex flex-row items-center">
-        <a href={`#slideA${x}`} className="btn btn-circle  border-none">
+        <a href={`#slideC${x}`} className="btn btn-circle  border-none">
           ❮
         </a>
         <div className="carousel max-w-4xl p-4 space-x-8 bg-neutral-200 rounded-box">
-          {animeData.map((item, index) => (
+          {comedyData.map((item, index) => (
             <div
               key={`slide${index}`}
-              id={`slideA${index}`}
-              className="carousel-item"
+              id={`slideC${index}`}
+              className="carousel-item transition ease-in-out hover:scale-110"
             >
               <img
                 src={item.poster}
@@ -34,11 +34,11 @@ const AnimeCarousel = () => {
           ))}
         </div>
         {/* try changing to Link */}
-        <a href={`#slideA${x + 6}`} className="btn btn-circle  border-none">
+        <a href={`#slideC${x + 6}`} className="btn btn-circle  border-none">
           ❯
         </a>
       </div>
     </div>
   );
 };
-export default AnimeCarousel;
+export default ComedyCarousel;

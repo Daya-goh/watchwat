@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import dataKorean from "./Data";
+import { useLocation, useNavigate } from "react-router-dom";
+import dataKorean from "../Data/Data";
 
 const Carousel = () => {
-  let x = 0; //for scrolling the carousel
-
   const navigateShowDetail = useNavigate();
+  let location = useLocation();
+  console.log(location.hash);
 
-  const [show, setShow] = useState([]);
-
+  // const [show, setShow] = useState([]);
   let codeArray = [];
   // const networkUrl =
   //   "https://api.watchmode.com/v1/list-titles/?apiKey=RHHugJR1qM9DGvMQ7id18NmO42spStnIziU6vwr2&network_ids=511";
@@ -49,15 +47,16 @@ const Carousel = () => {
         <h3>Korean</h3>
       </div>
       <div className="flex flex-row items-center">
-        <a href={`#slide${x}`} className="btn btn-circle  border-none">
+        <a href="#slide0" className="btn btn-circle  border-none">
           ❮
         </a>
+
         <div className="carousel max-w-4xl p-4 space-x-8 bg-neutral-200 rounded-box">
           {dataKorean.map((item, index) => (
             <div
               key={`slide${index}`}
               id={`slide${index}`}
-              className="carousel-item"
+              className="carousel-item transition ease-in-out hover:scale-110"
             >
               <img
                 src={item.poster}
@@ -68,7 +67,7 @@ const Carousel = () => {
           ))}
         </div>
         {/* try changing to Link */}
-        <a href={`#slide${x + 10}`} className="btn btn-circle  border-none">
+        <a href="#slide10" className="btn btn-circle  border-none">
           ❯
         </a>
       </div>

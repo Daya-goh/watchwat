@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AnimeCarousel from "../Components/AnimeCarousel";
-import Carousel from "../Components/Carousel";
+import AnimeCarousel from "../Components/Carousel/AnimeCarousel";
+import Carousel from "../Components/Carousel/Carousel";
+import ComedyCarousel from "../Components/Carousel/ComedyCarousel";
 import SiteTitle from "../Components/SiteTitle";
 
 const Homepage = ({ setSearchResults }) => {
@@ -49,6 +50,7 @@ const Homepage = ({ setSearchResults }) => {
 
         <Carousel />
         <AnimeCarousel />
+        <ComedyCarousel />
       </div>
     </>
   );

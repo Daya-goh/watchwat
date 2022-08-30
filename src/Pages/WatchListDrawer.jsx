@@ -1,7 +1,8 @@
 const WatchList = ({ addShow }) => {
   console.log(addShow);
   return (
-    <ul className="flex flex-col gap-2">
+    <ul className="flex flex-col gap-2 items-center">
+      <h3>Watch List</h3>
       {addShow.map((show) => (
         <div
           key={show.id}
@@ -9,7 +10,9 @@ const WatchList = ({ addShow }) => {
         >
           <div className="avatar">
             <div className="w-20 rounded-xl">
-              <img src={show.poster || show.image_url} />
+              <a href={addShow.trailer} target="_blank">
+                <img src={show.poster || show.image_url} />
+              </a>
             </div>
           </div>
           <p>{show.title || show.name}</p>
