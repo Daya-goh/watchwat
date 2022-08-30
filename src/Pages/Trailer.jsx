@@ -35,15 +35,18 @@ const Trailer = ({ setShowDetails, showDetails }) => {
   return (
     <div className="flex flex-col items-center gap-4">
       <h1 className="text-4xl">{showDetails.title}</h1>
-      <iframe
-        width="800"
-        height="500"
-        src={playVideo()}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+
+      <div>
+        <iframe
+          width="800"
+          height="500"
+          src={playVideo()}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   );
 };

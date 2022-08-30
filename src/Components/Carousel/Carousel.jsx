@@ -58,7 +58,7 @@ const Carousel = () => {
             >
               <img
                 src={item.poster}
-                className="rounded-box "
+                className="rounded-box w-16 md:w-28 lg:w-36"
                 onClick={() => handleClick(item.imdb_id)}
               />
             </div>

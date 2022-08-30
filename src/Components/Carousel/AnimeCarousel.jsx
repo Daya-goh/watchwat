@@ -27,7 +27,7 @@ const AnimeCarousel = () => {
             >
               <img
                 src={item.poster}
-                className="rounded-box "
+                className="rounded-box w-16 md:w-28 lg:w-36"
                 onClick={() => handleAnimeClick(item.imdb_id)}
               />
             </div>
