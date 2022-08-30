@@ -44,9 +44,10 @@ const Trailer = ({ setShowDetails, showDetails }) => {
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullscreen
         ></iframe>
       </div>
+      <div className="w-7/12 p-4 text-justify">{showDetails.plot_overview}</div>
     </div>
   );
 };

@@ -12,7 +12,7 @@ const ComedyCarousel = () => {
   return (
     <div className="flex flex-col items-start">
       <div className="text-2xl">
-        <h3>Anime</h3>
+        <h3>Comedy</h3>
       </div>
       <div className="flex flex-row items-center">
         <a href={`#slideC${x}`} className="btn btn-circle  border-none">
@@ -27,7 +27,7 @@ const ComedyCarousel = () => {
             >
               <img
                 src={item.poster}
-                className="rounded-box w-16 md:w-28 lg:w-36"
+                className="rounded-box "
                 onClick={() => handleAnimeClick(item.imdb_id)}
               />
             </div>

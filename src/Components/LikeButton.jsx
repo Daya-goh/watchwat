@@ -18,7 +18,9 @@ const LikeButton = ({ showDetails, favArray, setFavArray }) => {
 
   const likeStatus = favArray?.find((showId) => showId.id === showDetails?.id)
     ? "pink"
-    : " ";
+    : "";
+
+  const heart = likeStatus ? "♥️" : "♡";
 
   return (
     <div>
@@ -27,7 +29,7 @@ const LikeButton = ({ showDetails, favArray, setFavArray }) => {
         style={{ backgroundColor: likeStatus, border: likeStatus }}
         onClick={() => handleLike({ id })}
       >
-        ♥️
+        {heart}
       </button>
     </div>
   );

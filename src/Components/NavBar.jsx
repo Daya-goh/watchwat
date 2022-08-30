@@ -4,12 +4,12 @@ const NavBar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <Link className="btn btn-ghost normal-case text-xl" to="/">
-          WatchWat
-        </Link>
         <div className="w-10 rounded-full">
           <img src="https://img.icons8.com/bubbles/500/tv-show.png" />
         </div>
+        <Link className="btn btn-ghost normal-case text-xl" to="/">
+          WatchWat
+        </Link>
       </div>
 
       <div className="flex-none">

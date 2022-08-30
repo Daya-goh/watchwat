@@ -52,16 +52,13 @@ const DetailsPage = ({
               Release date:{" "}
               {Moment(showDetails.release_date).format("DD-MM-YYYY")}
             </p>
-            <p>{showDetails.plot_overview}</p>
-            {/* buttons */}
             <div className="card-actions">
-              {/* <button className="btn btn-primary">+</button> */}
               <AddButton
                 showDetails={showDetails}
                 addShow={addShow}
                 setAddShow={setAddShow}
               />
-              {/* <button className="btn btn-primary">♥️</button> */}
+
               <LikeButton
                 showDetails={showDetails}
                 favArray={favArray}
