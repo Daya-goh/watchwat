@@ -3,8 +3,6 @@ import dataKorean from "../Data/Data";
 
 const Carousel = () => {
   const navigateShowDetail = useNavigate();
-  let location = useLocation();
-  console.log(location.hash);
 
   // const [show, setShow] = useState([]);
   let codeArray = [];
@@ -51,7 +49,7 @@ const Carousel = () => {
           ❮
         </a>
 
-        <div className="carousel max-w-4xl p-4 space-x-8 bg-neutral-200 rounded-box">
+        <div className="carousel carousel-center max-w-4xl p-4 space-x-8 bg-neutral-200 rounded-box">
           {dataKorean.map((item, index) => (
             <div
               key={`slide${index}`}

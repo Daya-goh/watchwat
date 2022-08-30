@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Moment from "moment";
 import LikeButton from "../Components/LikeButton";
 import AddButton from "../Components/AddButton";
@@ -13,6 +13,11 @@ const DetailsPage = ({
   setAddShow,
 }) => {
   const { id } = useParams();
+  const navigateVideo = useNavigate();
+  const handleClick = (id) => {
+    console.log(id);
+    navigateVideo(`/trailers/${id}`);
+  };
 
   const fetchDetailsUrl = `https://api.watchmode.com/v1/title/${id}/details/?apiKey=RHHugJR1qM9DGvMQ7id18NmO42spStnIziU6vwr2`;
 
@@ -33,9 +38,10 @@ const DetailsPage = ({
         {/* image */}
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
-            <a href={showDetails.trailer} target="_blank">
-              <img src={showDetails.backdrop} />
-            </a>
+            <img
+              src={showDetails.backdrop}
+              onClick={() => handleClick(showDetails.id)}
+            />
           </figure>
           {/* text body */}
           <div className="card-body items-center text-center">

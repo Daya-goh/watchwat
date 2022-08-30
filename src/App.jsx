@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./Pages/HomePage";
 import Layout from "./Pages/Layout";
-import Fetch from "./Test/Fetch";
 import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
 import DetailsPage from "./Pages/DetailsPage";
 import Favorites from "./Pages/Favorites";
 import SearchPage from "./Pages/SearchPage";
+import Trailer from "./Pages/Trailer";
 
 function App() {
   useEffect(() => {
@@ -18,6 +18,17 @@ function App() {
   const [showDetails, setShowDetails] = useState({});
   const [searchResults, setSearchResults] = useState([]);
   const [addShow, setAddShow] = useState([]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("favArray", JSON.stringify(favArray));
+  // }, [favArray]);
+
+  // useEffect(() => {
+  //   const favArray = JSON.parse(localStorage.getItem("favArray"));
+  //   if (favArray) {
+  //     setItems(favArray);
+  //   }
+  // }, []);
 
   return (
     <BrowserRouter>
@@ -59,6 +70,15 @@ function App() {
                 setFavArray={setFavArray}
                 addShow={addShow}
                 setAddShow={setAddShow}
+              />
+            }
+          />
+          <Route
+            path="/trailers/:id"
+            element={
+              <Trailer
+                setShowDetails={setShowDetails}
+                showDetails={showDetails}
               />
             }
           />
