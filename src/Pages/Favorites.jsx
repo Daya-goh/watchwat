@@ -8,7 +8,7 @@ const Favorites = ({ favArray, setFavArray }) => {
     navigateImage(`/detailspage/${id}`);
   };
   return (
-    <div>
+    <div className="flex flex-col gap-4 items-center">
       <h1 className="font-bold text-3xl underline">Watch-Favorites</h1>
       <div className="flex flex-row flex-wrap gap-2">
         {favArray.map((show) => (
