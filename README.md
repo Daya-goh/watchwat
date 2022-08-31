@@ -32,7 +32,7 @@ A mock up of Netflix where you can search for shows and movies, track the shows 
 Having clarity on the project progress is important as there are many components and states. Therefore, doing up a detailed wire frames help to identify the components and states needed and a DOM to help with the passing of props, states and information.
 
 ![Homepage](../watchwat/Resources/Pictures/Homepage.png)
-![Favpage](../watchwat/Resources/Pictures/Fav_page.png)
+![Favpage](../watchwat/Resources/Pictures/fav_page_1.png)
 ![Drawer](../watchwat/Resources/Pictures/Watchlist%20_drawer.png)
 
 ![Drawer](../watchwat/Resources/Others/Carousel.gif)
