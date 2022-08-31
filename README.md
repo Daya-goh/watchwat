@@ -31,12 +31,12 @@ A mock up of Netflix where you can search for shows and movies, track the shows 
 
 Having clarity on the project progress is important as there are many components and states. Therefore, doing up a detailed wire frames help to identify the components and states needed and a DOM to help with the passing of props, states and information.
 
-![Homepage](../watchwat/Resources/Pictures/Homepage.png)
-![Favpage](../watchwat/Resources/Pictures/fav_page_1.png)
-![Drawer](../watchwat/Resources/Pictures/Watchlist%20_drawer.png)
+![Homepage](Resources/Pictures/Homepage.png)
+![Favpage](Resources/Pictures/Fav_page.png)
+![Drawer](Resources/Pictures/Watchlist_drawer.png)
 
-![Drawer](../watchwat/Resources/Others/Carousel.gif)
-![Drawer](../watchwat/Resources/Others/userstory.gif)
+![Drawer](Resources/Others/Carousel.gif)
+![Drawer](Resources/Others/userstory.gif)
 
 ### Crux of project
 
@@ -44,7 +44,7 @@ The crux of this project is finding the right API and manipulating the data rece
 
 For the website, there will be recommended shows by genres and the API results for the search genre returns only the brief details of the show data. I have to retrieve the id of the shows from the genre data and store it in an array. Then, use the array to do another fetch for the detailed show information.
 
-![Fetch](../watchwat/Resources/Pictures/Initial_Fetch.png)
+![Fetch](Resources/Pictures/Initial_Fetch.png)
 
 ### APIs used
 
