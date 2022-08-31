@@ -5,7 +5,7 @@ const Carousel = () => {
   const navigateShowDetail = useNavigate();
 
   // const [show, setShow] = useState([]);
-  let codeArray = [];
+  // let codeArray = [];
   // const networkUrl =
   //   "https://api.watchmode.com/v1/list-titles/?apiKey=RHHugJR1qM9DGvMQ7id18NmO42spStnIziU6vwr2&network_ids=511";
 
