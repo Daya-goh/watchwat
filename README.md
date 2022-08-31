@@ -6,15 +6,16 @@
 
 Build a web application using create-react-app / vite or next.js. Must be your own work.
 Use React framework to build your application with at least
-3 components
-4 props
-2 state properties
-2 setState
-2 routes
-Use 3rd party API and/or Firestore
-API call with Axios and display the data for the user. You may use any API of your choosing.
-Craft a README.md file that explains your app to the world.
-Create wire frames for your app and include it in your repo/readme.
+
+- 3 components
+- 4 props
+- 2 state properties
+- 2 setState
+- 2 routes
+- Use 3rd party API and/or Firestore
+- API call with Axios and display the data for the user. You may use any API of your choosing.
+  Craft a README.md file that explains your app to the world.
+  Create wire frames for your app and include it in your repo/readme.
 
 ### Technologies and Tools Used
 
